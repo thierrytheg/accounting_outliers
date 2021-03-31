@@ -35,10 +35,6 @@ try:
 except:
     pass
 
-#Detect column with Account Listing
-
-#sensitivity=st.write("**Sensitivity**")
-
 add_slidebar1= st.slider('Sensitivity', 0, 100, 50,help='Drag the slider to the right to increase the sensitivity which will result in more outliers detected. Drag to the slider to the left to decrease the sensitivity and reduce the number of outliers. ')
 
 
@@ -68,76 +64,6 @@ except:
     pass
      
 
-#df['Abs_Val']=abs(df['Amount'].astype(float))
-
-##filter out all rows with values under 1
-#df=df.loc[df['Abs_Val']>1]
- 
-##convert First_Digit column to string and extract first digit
-#df['First_Digit']=(df['Abs_Val']).apply(str).str[0]
- 
-##create series with count for each first digit
-#benford_df=df['First_Digit'].value_counts()
-#benford_df['Your_Dist_Pct']=round((benford_df/benford_df.sum())*100,1)
- 
-##create a temporary dataframe to plot Benford Distribution
-#benford_list=(benford_df['Your_Dist_Pct']).to_list()
-
-
-
-#data={
-#'First_Digit':[1,2,3,4,5,6,7,8,9],
-#'Your_Distribution' : benford_list,
-#'Benford_Distribution': [30.1,17.6,12.5,9.7,7.9,6.7,5.8,5.1,4.6]
-#}
-
-
-
-#st.write(df[df['First_Digit'].isin([1,2,3,4,5,6,7,8,9])])
-
-#df_plot=pd.DataFrame(data=data,columns=['First_Digit','Your_Distribution','Benford_Distribution'])
-
- 
-
- 
-#labels = df_plot['First_Digit']
-
-#Benford_Distribution = list(df_plot['Benford_Distribution'])
-#Your_Distribution = list(df_plot['Your_Distribution'])
- 
-#x = np.arange(len(labels))
-#width = 0.35
- 
-#fig, ax = plt.subplots()
- 
-#rects1 = ax.bar(x - width/2, Benford_Distribution, width, label='Benford_Distribution')
-#rects2 = ax.bar(x + width/2, Your_Distribution, width, label='Your_Distribution')
- 
-
-#ax.set_xlabel('First Digit')
-#ax.set_ylabel('Distribution')
- 
-#ax.set_title("Your Data Distribution vs Benford's Distribution")
-#ax.set_xticks(x)
-#ax.set_xticklabels(labels)
-#ax.legend()
- 
- 
-#def autolabel(rects):
-
-#    for rect in rects:
-#        height = rect.get_height()
-#        ax.annotate(''.format(height),
-#                    xy=(rect.get_x() + rect.get_width() / 2, height),
-#                    xytext=(0, 3),
-#                    textcoords="offset points",
-#                    ha='center', va='bottom')
- 
- 
-#autolabel(rects1)
-#autolabel(rects2)
- 
-#fig.tight_layout()
  
 q1_sensitivity=add_slidebar1/100
 q3_sensitivity=1-q1_sensitivity
@@ -177,4 +103,4 @@ try:
 
 except Exception as e:
     pass
-#st.pyplot(fig)
+
