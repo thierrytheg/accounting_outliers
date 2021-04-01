@@ -30,7 +30,7 @@ try:
                 pass
 
     else:
-        df=pd.read_csv('sample_data.csv')
+        df=pd.read_excel('sample_data.xlsx')
         st.error("You are currently viewing a sample dataset. Upload your own file to view your data.")
 except:
     pass
