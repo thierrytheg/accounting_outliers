@@ -6,6 +6,10 @@ import os
 import matplotlib.pyplot as plt
 import numpy as np
 
+st.write(st.secrets["chord_key"])
+st.write(st.secrets["chord_user"])
+
+
 def download_link_csv(object_to_download, download_filename, download_link_text):
     if isinstance(object_to_download,pd.DataFrame):
         object_to_download = object_to_download.to_csv(index=False)
